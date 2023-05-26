@@ -1,6 +1,9 @@
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +22,7 @@ public class Main {
     skeds.add(new Sked("Супермаркет", 3, 15));
     skeds.add(new Sked("Бег", 4, 15));
 
-    System.out.println(skeds);
+    //System.out.println(skeds);
     Collections.addAll(skeds);
     System.out.println(skeds);
 
@@ -133,12 +136,16 @@ public class Main {
         break;
     }
     System.out.println("----------------------------------------");
-    System.out.println("Итак,вы выбрали шоппинг, тогда поехали: ");
+    System.out.println("Итак,вы выбрали шоппинг, тогда поехали! За покупками... ");
     System.out.println("-----------------------------------------");
 
     System.out.println("==== Шоппинг===");
 
     System.out.println(">>>>>>Оплата на кассе:<<<<<<<");
+    System.out.println("Как будете оплачивать?");
+
+    String name = scanner.nextLine();
+    //System.out.println(name);
 
     HashMap<String, Integer> shopping = new HashMap<>();
     shopping.put("Платье", 20);
@@ -150,21 +157,33 @@ public class Main {
     }
     for (String shop : shopping.keySet()) {
 
-      // System.out.println(" Итого 100 евро:");
-      String name = scanner.next();
+      String name1 = scanner.next();
       if (shopping.containsKey(shop)) {
-        shopping.remove(name);
-        System.out.println(shop + " - " + name + " evro ");
+        shopping.remove(name1);
+        System.out.println(shop + " - " + name);
       } else {
+        System.out.println(" Может вы передумали?");
       }
-
+      Shopping shopOne = new Shopping("Красное", 50, 44);
+      shopOne.showBuy();
       System.out.println("Спасибо за покупку:");
-      Sked skedOne = new Sked("имя", 2, 16);
+      Sked skedOne = new Sked("Шоппинг", 2, 16);
       skedOne.skedAll();
-
+      Shopping shopFirst = new Shopping("Чёрное", 40, 44);
+      shopFirst.result(name);
     }
+
+
+      System.out.println(" Всё на сегодня достаточно, хорошего дня, до свидание!");
+
+    Date date = new Date();
+    System.out.println(date);
+    SimpleDateFormat format = new SimpleDateFormat("26.05.2023");
+    System.out.println(format.format(date));
+
   }
-}
+  }
+
 
 
 
