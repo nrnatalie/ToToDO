@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class Sked implements Buy { // РАСПИСАНИЕ
 
   String name;
@@ -37,21 +33,9 @@ public class Sked implements Buy { // РАСПИСАНИЕ
 
   public void skedAll() {
     System.out.println("Следующая покупка:");
+    System.out.println();
   }
 
-  public static final List<String> buys = new ArrayList<>();
-
-  static {
-    buys.add("Платье красное");
-    buys.add("Голубое платье");
-    buys.add("Джинсы");
-    buys.add("Шарф");
-
-    Collections.sort(buys);
-    System.out.println(buys);
-
-
-  }
 
   @Override
   public String toString() {
@@ -63,6 +47,7 @@ public class Sked implements Buy { // РАСПИСАНИЕ
 
   @Override
   public void showBuy() {
+    System.out.println("Name: " + this.name);
 
   }
 

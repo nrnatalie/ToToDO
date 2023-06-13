@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,7 +10,9 @@ import java.util.Scanner;
 
 public class Main {
 
+
   public static void main(String[] args) throws IOException {
+
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("=== Список дел ===");
@@ -20,13 +21,14 @@ public class Main {
     skeds.add(new Sked("Встреча", 2, 16));
     skeds.add(new Sked("Шоппинг", 1, 16));
     skeds.add(new Sked("Супермаркет", 3, 15));
-    skeds.add(new Sked("Бег", 4, 15));
+    skeds.add(new Sked("Совещание", 4, 15));
 
     //System.out.println(skeds);
     Collections.addAll(skeds);
     System.out.println(skeds);
 
     System.out.print("Выберите из списка :");
+
     int number = scanner.nextInt();
     scanner.nextLine();
 
@@ -51,7 +53,7 @@ public class Main {
         break;
       case 5:
         result.add(" ");
-        System.out.println("Вы ввели: Бег");
+        System.out.println("Вы ввели: Совещание");
         break;
 
       default:
@@ -68,15 +70,17 @@ public class Main {
       System.out.println(k + "." + n.getName());
     }
     System.out.print("Выберите из списка :");
+
     int number1 = scanner.nextInt();
     scanner.nextLine();
+
     System.out.println(number1);
 
     List<String> result1 = new ArrayList<>();
     switch (number1) {
       case 1:
         result1.add(" ");
-        System.out.println("Вы ввели: спорт- клуб");
+        System.out.println(" Вы ввели: спорт- клуб ");
         break;
       case 2:
         result1.add(" ");
@@ -92,14 +96,14 @@ public class Main {
         break;
       case 5:
         result1.add(" ");
-        System.out.println("Вы ввели: Бег");
+        System.out.println("Вы ввели: Совещание");
         break;
 
       default:
         break;
     }
 
-    System.out.print("Выберите главное  дело:");
+    System.out.print("Выберите дело сегодняшнее - по важнее:");
     int number2 = scanner.nextInt();
     scanner.nextLine();
     System.out.println(number2);
@@ -129,12 +133,13 @@ public class Main {
         break;
       case 5:
         result2.add(" ");
-        System.out.println("Вы ввели: Бег");
+        System.out.println("Вы ввели: Совещание");
         break;
 
       default:
         break;
     }
+
     System.out.println("----------------------------------------");
     System.out.println("Итак,вы выбрали шоппинг, тогда поехали! За покупками... ");
     System.out.println("-----------------------------------------");
@@ -164,25 +169,28 @@ public class Main {
       } else {
         System.out.println(" Может вы передумали?");
       }
+
       Shopping shopOne = new Shopping("Красное", 50, 44);
       shopOne.showBuy();
+
       System.out.println("Спасибо за покупку:");
       Sked skedOne = new Sked("Шоппинг", 2, 16);
       skedOne.skedAll();
-      Shopping shopFirst = new Shopping("Чёрное", 40, 44);
-      shopFirst.result(name);
+
+
     }
 
-
-      System.out.println(" Всё на сегодня достаточно, хорошего дня, до свидание!");
+    System.out.println(" Думаю на сегодня достаточно, хорошего дня и до свидания!");
+    System.out.println();
 
     Date date = new Date();
     System.out.println(date);
     SimpleDateFormat format = new SimpleDateFormat("26.05.2023");
     System.out.println(format.format(date));
 
+
   }
-  }
+}
 
 
 
